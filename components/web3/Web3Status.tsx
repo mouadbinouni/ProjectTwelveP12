@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import { polygon } from 'wagmi/chains';
+import React, { useEffect, useRef, useState } from 'react';
+import { polygon, bsc, linea } from 'wagmi/chains';
 import { Platform } from '@/constants';
 import { useRouter } from 'next/router';
 import Button from '@/components/button';
@@ -44,10 +44,16 @@ function Web3Status() {
       unwatchAccount.current?.();
     },
   });
-  const { switchNetwork } = useSwitchNetwork({ chainId: polygon.id });
+  const { switchNetwork } = useSwitchNetwork();
 
-  const [isOpen, setIsOpen] = useRecoilState(isConnectPopoverOpen);
+  // Loading state for connection button
+  const [isConnecting, setIsConnecting] = useState(false);
+  const [isPopoverOpen, setIsPopoverOpen] = useRecoilState(isConnectPopoverOpen);
   const posterCapture = useRecoilValue(posterCaptureAtom);
+
+  // Supported chains
+  const supportedNetworks = [polygon, bsc, linea];
+  const isNetworkSupported = supportedNetworks.some(network => network.id === chain?.id);
 
   useEffect(() => {
     const accessToken = getAccessToken({ address });
@@ -61,9 +67,14 @@ function Web3Status() {
   }
 
   if (isConnected) {
-    if (chain?.unsupported) {
+    if (chain?.unsupported || !isNetworkSupported) {
       return (
-        <Button size="small" type="error" className="h-10" onClick={() => switchNetwork?.()}>
+        <Button
+          size="small"
+          type="error"
+          className="h-10"
+          onClick={() => switchNetwork?.(supportedNetworks[0].id)}
+        >
           Wrong Network
         </Button>
       );
@@ -79,9 +90,14 @@ function Web3Status() {
   } else {
     return (
       <div>
-        <Popover open={isOpen} onOpenChange={(op) => setIsOpen(op)} render={({ close }) => <WalletPopover close={close} />}>
-          <Button size="small" type="gradient" className="h-10 w-[120px]">
-            Connect
+        <Popover open={isPopoverOpen} onOpenChange={setIsPopoverOpen} render={({ close }) => <WalletPopover close={close} />}>
+          <Button
+            size="small"
+            type="gradient"
+            className="h-10 w-[120px]"
+            disabled={isConnecting}
+          >
+            {isConnecting ? 'Connecting...' : 'Connect'}
           </Button>
         </Popover>
       </div>

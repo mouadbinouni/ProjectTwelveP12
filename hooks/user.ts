@@ -161,3 +161,15 @@ export const useLogoutCallback = () => {
     disconnect?.();
   }, [disconnect, removeGlobalState]);
 };
+
+// --- Connection persistence helpers ---
+export const saveConnectionState = (connectorId: string) => {
+  if (typeof window !== 'undefined') {
+    localStorage.setItem('lastConnectedWallet', connectorId);
+  }
+};
+
+export const getLastConnectedWallet = (): string | null => {
+  if (typeof window === 'undefined') return null;
+  return localStorage.getItem('lastConnectedWallet');
+};
