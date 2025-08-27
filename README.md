@@ -1,84 +1,57 @@
+# Project Twelve (P12)
+
 <p align="center">
-    <img alt="p12_logo" src="./docs/p12_logo.png" />
+  <img alt="Project Twelve Logo" src="./docs/p12_logo.png" />
 </p>
 
-Project Twelve is a GameFi ecosystem with sustainable economies. We believe that "gaming" is an integral part of the
-Metaverse, where gamers and developers are the two most important components.
+**Project Twelve (P12)** is a **GameFi ecosystem** designed to build sustainable gaming economies.  
+We believe gaming is a core part of the Metaverse, and that **gamers and developers** are its most essential pillars.  
 
-Steam, as a premier gaming platform, is the largest digital distribution platform for PC gaming; players spent almost 38
-billion hours on Steam in 2021.
+To put it into perspective:  
+On **Steam**, the world’s largest digital distribution platform for PC games, players spent **38 billion+ hours** gaming in 2021 alone.  
 
-![readme_01](./docs/readme_01.png)
+![P12 Overview](./docs/readme_01.png)
 
-We believe it will be a good means to identify game lovers with the help of Steam data, and we want to give tributes to
-all Steam gamers and developers!
+With Steam data, P12 aims to celebrate and reward the passion of both gamers and developers across the globe.  
 
-## For Developers
+---
 
-### Airdrop Tributes
+## For Developers  
 
-1. Developer-specific NFT.
-2. P12 tokens.
+### Airdrop Rewards  
+- Developer-exclusive NFTs  
+- P12 Tokens
 
-### Mechanism
+### How It Works  
+Using the **Steam API**, we gather information such as game IDs, names, and reviews. By applying signature verification, we can establish ownership between a developer and their games.  
 
-Through the Steam API, we get a list of all Steam games with their app ID, names, reviews, etc., and we use the
-signature method to determine the ownership between developers and games.
+**Eligibility:**  
+- Must own at least 1 published game on Steam (DLCs not included).  
+- Must complete verification on the P12 Airdrop Website.  
 
-Here are the rules and the results:
+**Rewards:**  
+1. Each verified game = 1 unique developer NFT.  
+2. NFTs come in 4 rarities: Legendary, Epic, Rare, Uncommon.  
+3. Token rewards depend on a game’s reviews and publish date.  
 
-Steam game developers who:
+---
 
-1. Own at least 1 game on Steam (except DLC).
-2. Complete the authentication steps on P12 Airdrop website.
+## For Gamers  
 
-will be rewarded with tributes according to the following rules:
+### Airdrop Rewards  
+- Gamer-specific NFTs  
+- P12 Tokens
 
-1. Each verified game will get 1 developer-specific NFT.
-2. The NFT has 4 categories: legendary, epic, rare, and uncommon.
-3. The amount of tokens that developers can claim is based on their games' reviews and publish date.
+### How It Works  
+By signing in with a **Steam account** and setting your profile to **Public**, P12 collects basic account data (avatar, owned games, playtime, etc.) to determine your reward.  
 
-## For Gamers
+**Eligibility:**  
+- Must own a valid Steam account.  
+- Must complete verification on the P12 Airdrop Website.  
 
-### Airdrop Tributes
+**Rewards:**  
+1. Each Steam account = 1 gamer NFT.  
+2. NFTs come in 5 rarities: Legendary, Epic, Rare, Uncommon, Common.  
+3. Token rewards are based on playtime, gaming history, and other metrics.  
 
-1. Gamer-specific NFT.
-2. P12 tokens.
-
-### Mechanism
-
-Sign in with a Steam account and set "My profile" to "Public," we get the account data including the avatar, a games
-array, total playtime, etc., and the gaming experience will determine the rewards.
-
-Here are the rules and the results:
-
-Steam gamers who:
-
-1. Own a Steam account.
-2. Complete the authentication steps on P12 Airdrop website.
-
-will be rewarded with tributes according to the following rules:
-
-1. Each Steam account will get 1 Gamer specific NFT.
-2. The NFT has 5 categories: legendary, epic, rare, uncommon and common.
-3. The amount of tokens that gamers can claim is based on various relevant metrics.
-
-## Result Files
-
-We export the results to a public Google
-folder [here](https://drive.google.com/drive/folders/1jKYEUQvfKuJcV84pWSdH96XO05HC4zPs).
-
-Game data is available and complete, while binding relationships between the game and address will be continuously
-updated.
-
-### Install dependencies
-
-```bash
-npm install
-```
-
-### Run project
-
-```bash
-npm run dev
-```
+Game data and player-game relationships will be continuously updated. 
