@@ -2,8 +2,6 @@
     <img alt="p12_logo" src="./docs/p12_logo.png" />
 </p>
 
-# P12 Airdrop
-
 Project Twelve is a GameFi ecosystem with sustainable economies. We believe that "gaming" is an integral part of the
 Metaverse, where gamers and developers are the two most important components.
 
